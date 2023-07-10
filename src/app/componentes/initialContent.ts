@@ -21,9 +21,13 @@ export const content = `    <h1>Título de Nível 1</h1>
 
 <cite>Referência a uma obra citada</cite>
 
-<code>Trecho de código</code>
-
-<pre>Texto pré-formatado</pre>
+<pre>
+<code class="language-js">
+  function myFunction(p1, p2) {
+    return p1 * p2;
+  }
+</code> 
+</pre>
 
 <abbr title="World Wide Web">WWW</abbr>
 
@@ -45,9 +49,7 @@ export const content = `    <h1>Título de Nível 1</h1>
 
 <a href="https://www.example.com">Link para outro site</a>
 
-<h2>Exemplo de Parágrafos</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam dolor vel est faucibus congue.</p>
-<p>Phasellus ut nibh ultrices, tempor leo at, finibus urna. Sed auctor metus in feugiat efficitur.</p>
 
 <h2>Exemplo de Listas</h2>
 
