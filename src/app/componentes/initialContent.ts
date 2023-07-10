@@ -22,11 +22,11 @@ export const content = `    <h1>Título de Nível 1</h1>
 <cite>Referência a uma obra citada</cite>
 
 <pre>
-<code class="language-js">
+  <code class="language-js">
   function myFunction(p1, p2) {
-    return p1 * p2;
-  }
-</code> 
+      return p1 * p2;
+    }
+  </code> 
 </pre>
 
 <abbr title="World Wide Web">WWW</abbr>
