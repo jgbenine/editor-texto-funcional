@@ -61,7 +61,7 @@ function Editor() {
             </BubbleButton>
             <BubbleButton
                 onClick={() => editor.chain().focus().toggleStrike().run()}
-                data-active={editor.isActive('stricke')}
+                data-active={editor.isActive('strike')}
             >
               <RxStrikethrough className="w-4 h-4" />
             </BubbleButton>
@@ -69,7 +69,7 @@ function Editor() {
                 onClick={() => editor.chain().focus().toggleCode().run()}
                 data-active={editor.isActive('code')}
             >
-              <RxCode className="w-4 h-" />
+              <RxCode className="w-4 h-4" />
             </BubbleButton>
           </div>
         </BubbleMenu>
