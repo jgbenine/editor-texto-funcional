@@ -10,9 +10,56 @@ export default function Home() {
           </div>
         </aside>
         <main className="p-4">
-          <div className="max-w-[700px] mx-auto pt-16">
-          <h1>Editor</h1>
-          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, aliquam corrupti nemo molestias inventore placeat quasi cumque iste alias in eius nostrum magni? In eius nisi perspiciatis vitae, quo quam?</p>
+          <div className="max-w-[700px] mx-auto pt-16 flex flex-col">
+            <h1>Editor</h1>
+
+            <h1>Título de Nível 1</h1>
+            <h2>Título de Nível 2</h2>
+            <h3>Título de Nível 3</h3>
+            <h4>Título de Nível 4</h4>
+            <h5>Título de Nível 5</h5>
+            <h6>Título de Nível 6</h6>
+
+            <p>Parágrafo de texto.</p>
+
+            <strong>Texto em negrito</strong>
+
+            <em>Texto em itálico</em>
+
+            <u>Texto sublinhado</u>
+
+            <s>Texto riscado</s>
+
+            <blockquote>Citação em bloco</blockquote>
+
+            <q>Citação curta</q>
+
+            <cite>Referência a uma obra citada</cite>
+
+            <code>Trecho de código</code>
+
+            <pre>Texto pré-formatado</pre>
+
+            <abbr title="World Wide Web">WWW</abbr>
+
+            <mark>Texto destacado</mark>
+
+            <del>Texto deletado</del>
+
+            <ins>Texto inserido</ins>
+
+            <sup>Texto sobrescrito</sup>
+
+            <sub>Texto subscrito</sub>
+
+            <small>Texto em tamanho reduzido</small>
+
+            <big>Texto em tamanho ampliado</big>
+
+            <span>Span - um contêiner genérico para estilo de texto</span>
+
+            <a href="https://www.example.com">Link para outro site</a>
+
           </div>
         </main>
       </div>
