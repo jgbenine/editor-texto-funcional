@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { useEditor, EditorContent, BubbleMenu } from '@tiptap/react'
+import { useEditor, EditorContent, BubbleMenu, FloatingMenu } from '@tiptap/react'
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import js from 'highlight.js/lib/languages/javascript'
 import StarterKit from '@tiptap/starter-kit'
@@ -36,6 +36,19 @@ function Editor() {
       <EditorContent
         className="max-w-[700px] mx-auto pt-16 flex flex-col prose"
         editor={editor} />
+      {editor && (
+          <FloatingMenu editor={editor} shouldShow={({state})=> {
+            const {$from} = state.selection
+            const currentLineText = $from.nodeBefore?.textContent
+            return currentLineText === '/'
+          }}>
+
+            <button>
+              Textos
+            </button>
+             
+          </FloatingMenu>
+      )}
       {editor && (
         <BubbleMenu className="bg-zinc-200 shadow-lg border border-zinc-300 shadow-black/20 rounded-md overflow-hidden flex divide-zinc-300 divide-x-2" editor={editor}>
           <BubbleButton>
