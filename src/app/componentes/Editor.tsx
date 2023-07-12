@@ -19,14 +19,19 @@ import {
   LuList,
   LuListOrdered,
 } from "react-icons/lu";
-import ToolBarMenu from "./Toolbar";
+
+import ToolBarMenu, { EditorContext } from "./Toolbar";
 
 lowlight.registerLanguage("js", js);
 
 function Editor() {
   const editor = useEditor({
     extensions: [
-      StarterKit,
+      StarterKit.configure({
+         code:{
+          
+         }
+      }),
       CodeBlockLowlight.configure({
         lowlight,
       }),
@@ -126,12 +131,14 @@ function Editor() {
       )}
 
       {editor && (
-        <BubbleMenu
-          className=" p-1 bg-zinc-200 shadow-lg border flex items-center border-zinc-300 shadow-black/20 rounded-md overflow-hidden divide-zinc-300 divide-x-2"
-          editor={editor}
-        >
+        <>
+          <EditorContent
+            className="max-w-[700px] mx-auto pt-16 flex flex-col prose"
+            editor={editor}
+          />
           <ToolBarMenu />
-        </BubbleMenu>
+          {/* Resto do código */}
+        </>
       )}
     </>
   );
