@@ -1,8 +1,6 @@
 import React from "react";
 import * as Toolbar from "@radix-ui/react-toolbar";
-import { useEditor, BubbleMenu, EditorContent, } from "@tiptap/react";
-import { content } from './initialContent'
-
+import { BubbleMenu, Editor, EditorContent } from "@tiptap/react";
 import {
   RxFontBold,
   RxFontItalic,
@@ -11,108 +9,66 @@ import {
   RxChatBubble,
   RxChevronDown,
 } from "react-icons/rx";
-import {
-  FontBoldIcon,
-  FontItalicIcon,
-  StrikethroughIcon,
-  TextAlignLeftIcon,
-  TextAlignCenterIcon,
-  TextAlignRightIcon,
-} from "@radix-ui/react-icons";
-import { lowlight } from "lowlight/lib/core";
-import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
-import StarterKit from "@tiptap/starter-kit";
-import js from "highlight.js/lib/languages/javascript";
-import "highlight.js/styles/stackoverflow-dark.css";
 
-lowlight.registerLanguage("js", js);
+interface toggleMenuProps {
+  editor: Editor;
+}
 
-// import './styles.css';
-
-function ToolbarMenu({editor}) {
+function ToolbarMenu({ editor }: toggleMenuProps) {
   return (
-    <div>
+    <>
       <EditorContent
         className="max-w-[700px] mx-auto pt-16 flex flex-col prose"
         editor={editor}
       />
       {editor && (
-        <BubbleMenu editor={editor} className="border border-zinc-600">
+        <BubbleMenu editor={editor}>
           <Toolbar.Root
-            className="flex p-[10px] w-full min-w-max rounded-md bg-white shadow-[0_2px_10px] shadow-blackA7"
+            className="flex gap-10 w-full min-w-max rounded-md bg-zinc-100 border shadow-[0_1px_5px] shadow-zinc-400"
             aria-label="Formatting options"
           >
-            <Toolbar.ToggleGroup type="multiple" aria-label="Text formatting">
+            <Toolbar.ToggleGroup
+              type="multiple"
+              aria-label="Text formatting"
+              className="flex gap-1.5 p-2"
+            >
               <Toolbar.ToggleItem
-                className="flex-shrink-0 flex-grow-0 basis-auto text-mauve11 h-[25px] px-[5px] rounded inline-flex text-[13px] leading-none items-center justify-center bg-white ml-0.5 outline-none hover:bg-violet3 hover:text-violet11 focus:relative focus:shadow-[0_0_0_2px] focus:shadow-violet7 first:ml-0 data-[state=on]:bg-violet5 data-[state=on]:text-violet11"
+                className="h-[100%] border bortder-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
                 value="bold"
                 aria-label="Bold"
                 onClick={() => editor.chain().focus().toggleBold().run()}
               >
-                <RxFontBold />
+                <RxFontBold className="w-5 h-5" />
               </Toolbar.ToggleItem>
               <Toolbar.ToggleItem
-                className="flex-shrink-0 flex-grow-0 basis-auto text-mauve11 h-[25px] px-[5px] rounded inline-flex text-[13px] leading-none items-center justify-center bg-white ml-0.5 outline-none hover:bg-violet3 hover:text-violet11 focus:relative focus:shadow-[0_0_0_2px] focus:shadow-violet7 first:ml-0 data-[state=on]:bg-violet5 data-[state=on]:text-violet11"
+                className="h-[100%] border border-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
                 value="italic"
                 aria-label="Italic"
+                onClick={() => editor.chain().focus().toggleItalic().run()}
               >
-                <FontItalicIcon />
+                <RxFontItalic className="w-5 h-5" />
               </Toolbar.ToggleItem>
               <Toolbar.ToggleItem
-                className="flex-shrink-0 flex-grow-0 basis-auto text-mauve11 h-[25px] px-[5px] rounded inline-flex text-[13px] leading-none items-center justify-center bg-white ml-0.5 outline-none hover:bg-violet3 hover:text-violet11 focus:relative focus:shadow-[0_0_0_2px] focus:shadow-violet7 first:ml-0 data-[state=on]:bg-violet5 data-[state=on]:text-violet11"
-                value="strikethrough"
-                aria-label="Strike through"
+                value="strike"
+                aria-label="strike"
+                onClick={() => editor.chain().focus().toggleStrike().run()}
+                className="h-[100%] border border-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
               >
-                <StrikethroughIcon />
+                <RxStrikethrough className="w-5 h-5" />
+              </Toolbar.ToggleItem>
+              <Toolbar.ToggleItem
+                value="code"
+                aria-label="code"
+                onClick={() => editor.chain().focus().toggleCode().run()}
+                className="h-[100%] border border-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
+              >
+                <RxCode className="w-5 h-5" />
               </Toolbar.ToggleItem>
             </Toolbar.ToggleGroup>
-            <Toolbar.Separator className="w-[1px] bg-mauve6 mx-[10px]" />
-            <Toolbar.ToggleGroup
-              type="single"
-              defaultValue="center"
-              aria-label="Text alignment"
-            >
-              <Toolbar.ToggleItem
-                className="flex-shrink-0 flex-grow-0 basis-auto text-mauve11 h-[25px] px-[5px] rounded inline-flex text-[13px] leading-none items-center justify-center bg-white ml-0.5 outline-none hover:bg-violet3 hover:text-violet11 focus:relative focus:shadow-[0_0_0_2px] focus:shadow-violet7 first:ml-0 data-[state=on]:bg-violet5 data-[state=on]:text-violet11"
-                value="left"
-                aria-label="Left aligned"
-              >
-                <TextAlignLeftIcon />
-              </Toolbar.ToggleItem>
-              <Toolbar.ToggleItem
-                className="flex-shrink-0 flex-grow-0 basis-auto text-mauve11 h-[25px] px-[5px] rounded inline-flex text-[13px] leading-none items-center justify-center bg-white ml-0.5 outline-none hover:bg-violet3 hover:text-violet11 focus:relative focus:shadow-[0_0_0_2px] focus:shadow-violet7 first:ml-0 data-[state=on]:bg-violet5 data-[state=on]:text-violet11"
-                value="center"
-                aria-label="Center aligned"
-              >
-                <TextAlignCenterIcon />
-              </Toolbar.ToggleItem>
-              <Toolbar.ToggleItem
-                className="flex-shrink-0 flex-grow-0 basis-auto text-mauve11 h-[25px] px-[5px] rounded inline-flex text-[13px] leading-none items-center justify-center bg-white ml-0.5 outline-none hover:bg-violet3 hover:text-violet11 focus:relative focus:shadow-[0_0_0_2px] focus:shadow-violet7 first:ml-0 data-[state=on]:bg-violet5 data-[state=on]:text-violet11"
-                value="right"
-                aria-label="Right aligned"
-              >
-                <TextAlignRightIcon />
-              </Toolbar.ToggleItem>
-            </Toolbar.ToggleGroup>
-            <Toolbar.Separator className="w-[1px] bg-mauve6 mx-[10px]" />
-            <Toolbar.Link
-              className="bg-transparent text-mauve11 inline-flex justify-center items-center hover:bg-transparent hover:cursor-pointer flex-shrink-0 flex-grow-0 basis-auto h-[25px] px-[5px] rounded text-[13px] leading-none bg-white ml-0.5 outline-none hover:bg-violet3 hover:text-violet11 focus:relative focus:shadow-[0_0_0_2px] focus:shadow-violet7 first:ml-0 data-[state=on]:bg-violet5 data-[state=on]:text-violet11"
-              href="#"
-              target="_blank"
-              style={{ marginRight: 10 }}
-            >
-              Edited 2 hours ago
-            </Toolbar.Link>
-            <Toolbar.Button
-              className="px-[10px] text-white bg-violet9 flex-shrink-0 flex-grow-0 basis-auto h-[25px] rounded inline-flex text-[13px] leading-none items-center justify-center outline-none hover:bg-violet10 focus:relative focus:shadow-[0_0_0_2px] focus:shadow-violet7"
-              style={{ marginLeft: "auto" }}
-            >
-              Share
-            </Toolbar.Button>
           </Toolbar.Root>
         </BubbleMenu>
       )}
-    </div>
+    </>
   );
 }
 

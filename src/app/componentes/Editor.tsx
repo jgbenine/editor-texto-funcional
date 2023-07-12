@@ -1,11 +1,6 @@
 "use client";
 import React from "react";
-import {
-  useEditor,
-  EditorContent,
-  BubbleMenu,
-  FloatingMenu,
-} from "@tiptap/react";
+import { useEditor, EditorContent, FloatingMenu } from "@tiptap/react";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import js from "highlight.js/lib/languages/javascript";
 import StarterKit from "@tiptap/starter-kit";
@@ -20,7 +15,7 @@ import {
   LuListOrdered,
 } from "react-icons/lu";
 
-import ToolBarMenu, { EditorContext } from "./Toolbar";
+import ToolBarMenu from "./Toolbar";
 
 lowlight.registerLanguage("js", js);
 
@@ -127,13 +122,13 @@ function Editor() {
       )}
 
       {editor && (
-        <>
+        <div>
           <EditorContent
             className="max-w-[700px] mx-auto pt-16 flex flex-col prose"
             editor={editor}
           />
-          <ToolBarMenu editor={editor} />
-          </>
+            <ToolBarMenu editor={editor} />
+        </div>
       )}
     </>
   );
