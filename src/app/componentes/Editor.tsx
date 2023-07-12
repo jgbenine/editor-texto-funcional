@@ -22,7 +22,6 @@ import {
   RxText,
 } from "react-icons/rx";
 import {
-  LuText,
   LuHeading1,
   LuHeading2,
   LuHeading3,
@@ -64,25 +63,76 @@ function Editor() {
             return currentLineText === "/";
           }}
         >
-          <div className="bg-zinc-200 shadow-lg border border-zinc-300 shadow-black/20 rounded-md overflow-hidden flex flex-col gap-4 divide-zinc-300 p-3">
-            <button className="flex gap-1.5 text-zinc-800 rounded-md hover:bg-zinc-300 p-2 transition-opacity">
-              <LuText className="w-9 h-9" />
-              <div className="flex flex-col gap-0.5">
-                <p className="text-[0.7rem] uppercase font-bold text-left">
-                  Texto
-                </p>
-                <span className="text-[0.7rem]">Minus delectus nostrum, via dolores.
-                </span>
-              </div>
-            </button>
-            <button className="flex gap-1.5 text-zinc-800 rounded-md hover:bg-zinc-300 p-2 transition-opacity">
+          <div className="bg-zinc-200 shadow-lg border border-zinc-300 shadow-black/20 rounded-md flex flex-col gap-4 divide-zinc-300 p-3 overflow-auto h-[250px]">
+            <button
+              className="flex gap-1.5 text-zinc-800 rounded-md hover:bg-zinc-300 p-2 transition-opacity"
+              onClick={() =>
+                editor.chain().focus().toggleHeading({ level: 1 }).run()
+              }
+            >
               <LuHeading1 className="w-9 h-9" />
               <div className="flex flex-col gap-0.5">
                 <p className="text-[0.7rem] uppercase font-bold text-left">
                   Título H1
                 </p>
                 <span className="text-[0.7rem]">
-                  Lorem ipsum dolor sit amet con recusandae?
+                 Título nível H1
+                </span>
+              </div>
+            </button>
+            <button
+              className="flex gap-1.5 text-zinc-800 rounded-md hover:bg-zinc-300 p-2 transition-opacity"
+              onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+            >
+              <LuHeading2 className="w-9 h-9" />
+              <div className="flex flex-col gap-0.5">
+                <p className="text-[0.7rem] uppercase font-bold text-left">
+                  Título H2
+                </p>
+                <span className="text-[0.7rem]">
+                 Título nível H2
+                </span>
+              </div>
+            </button>
+            <button
+              className="flex gap-1.5 text-zinc-800 rounded-md hover:bg-zinc-300 p-2 transition-opacity"
+              onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+            >
+              <LuHeading3 className="w-9 h-9" />
+              <div className="flex flex-col gap-0.5">
+                <p className="text-[0.7rem] uppercase font-bold text-left">
+                  Título H3
+                </p>
+                <span className="text-[0.7rem]">
+                 Título nível H3
+                </span>
+              </div>
+            </button>
+            <button
+              className="flex gap-1.5 text-zinc-800 rounded-md hover:bg-zinc-300 p-2 transition-opacity"
+              onClick={() => editor.chain().focus().toggleBulletList().run()}
+            >
+              <LuList className="w-9 h-9" />
+              <div className="flex flex-col gap-0.5">
+                <p className="text-[0.7rem] uppercase font-bold text-left">
+                  Lista Simples
+                </p>
+                <span className="text-[0.7rem]">
+                • Exemplo de Lista
+                </span>
+              </div>
+            </button>
+            <button
+              className="flex gap-1.5 text-zinc-800 rounded-md hover:bg-zinc-300 p-2 transition-opacity"
+              onClick={() => editor.chain().focus().toggleOrderedList().run()}
+            >
+              <LuListOrdered className="w-9 h-9" />
+              <div className="flex flex-col gap-0.5">
+                <p className="text-[0.7rem] uppercase font-bold text-left">
+                  Lista Ordenada
+                </p>
+                <span className="text-[0.7rem]">
+                1.Exemplo Lista 
                 </span>
               </div>
             </button>
