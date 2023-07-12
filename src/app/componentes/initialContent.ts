@@ -1,25 +1,65 @@
-export const content = `    <h1>Título de Nível 1</h1>
-<h2>Título de Nível 2</h2>
-<h3>Título de Nível 3</h3>
-<h4>Título de Nível 4</h4>
-<h5>Título de Nível 5</h5>
-<h6>Título de Nível 6</h6>
+export const content = `
+<h1>Título de Nível 1</h1>
+<h1>Exemplo de Artigo com Diversas Tags HTML</h1>
 
-<p>Parágrafo de texto.</p>
+<h2>Introdução</h2>
+<p>Neste artigo, exploraremos diferentes tags HTML e como elas podem ser usadas para formatar e estruturar o conteúdo de uma página da web.</p>
 
-<strong>Texto em negrito</strong>
+<h2>1. Títulos e Parágrafos</h2>
+<h3>1.1 Título de Nível 3</h3>
+<p>Este é um parágrafo de texto normal.</p>
+<p><strong>Este é um parágrafo em negrito.</strong></p>
+<p><em>Este é um parágrafo em itálico.</em></p>
 
-<em>Texto em itálico</em>
+<h2>2. Listas</h2>
+<h3>2.1 Lista Não Ordenada (bullets)</h3>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
 
-<u>Texto sublinhado</u>
+<h3>2.2 Lista Ordenada</h3>
+<ol>
+<li>Primeiro item</li>
+<li>Segundo item</li>
+<li>Terceiro item</li>
+</ol>
 
-<s>Texto riscado</s>
+<h2>3. Links e Imagens</h2>
+<h3>3.1 Links</h3>
+<p>Aqui está um <a href="https://www.exemplo.com">link</a> para um site externo.</p>
 
-<blockquote>Citação em bloco</blockquote>
+<h3>3.2 Imagens</h3>
+<p>Aqui está uma imagem incorporada:</p>
+<img src="caminho-para-imagem.jpg" alt="Descrição da imagem">
 
-<q>Citação curta</q>
+<h2>4. Tabelas</h2>
+<table>
+<tr>
+<th>Nome</th>
+<th>Idade</th>
+</tr>
+<tr>
+<td>João</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Maria</td>
+<td>30</td>
+</tr>
+</table>
 
-<cite>Referência a uma obra citada</cite>
+<h2>5. Divisões</h2>
+<div>
+<p>Este é um parágrafo dentro de uma divisão.</p>
+</div>
+
+<h2>6. Citações</h2>
+<blockquote>
+<p>Esta é uma citação.</p>
+</blockquote>
+
 
 <pre>
   <code class="language-js">

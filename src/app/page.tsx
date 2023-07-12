@@ -2,7 +2,7 @@ import Editor from "./componentes/Editor";
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 text-zinc-900 h- p-8" >
+    <main className="bg-gradient-to-r from-amber-200 to-yellow-500h- p-8" >
       <div className="bg-white border-xl mx-auto rounded-lg max-w-[1100px]  border-black/20 overflow-hidden grid grid-cols-[16rem_1fr]">
         <aside className="bg-zinc-50 border-r-zinc-100 p-4">
           <div className="flex gap-2 group">

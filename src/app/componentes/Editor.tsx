@@ -13,22 +13,13 @@ import { content } from "./initialContent";
 import { lowlight } from "lowlight/lib/core";
 import "highlight.js/styles/stackoverflow-dark.css";
 import {
-  RxFontBold,
-  RxFontItalic,
-  RxStrikethrough,
-  RxCode,
-  RxChatBubble,
-  RxChevronDown,
-  RxText,
-} from "react-icons/rx";
-import {
   LuHeading1,
   LuHeading2,
   LuHeading3,
   LuList,
   LuListOrdered,
 } from "react-icons/lu";
-import { BubbleButton } from "./BubbleButton";
+import ToolBarMenu from "./Toolbar";
 
 lowlight.registerLanguage("js", js);
 
@@ -75,37 +66,35 @@ function Editor() {
                 <p className="text-[0.7rem] uppercase font-bold text-left">
                   Título H1
                 </p>
-                <span className="text-[0.7rem]">
-                 Título nível H1
-                </span>
+                <span className="text-[0.7rem]">Título nível H1</span>
               </div>
             </button>
             <button
               className="flex gap-1.5 text-zinc-800 rounded-md hover:bg-zinc-300 p-2 transition-opacity"
-              onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+              onClick={() =>
+                editor.chain().focus().toggleHeading({ level: 2 }).run()
+              }
             >
               <LuHeading2 className="w-9 h-9" />
               <div className="flex flex-col gap-0.5">
                 <p className="text-[0.7rem] uppercase font-bold text-left">
                   Título H2
                 </p>
-                <span className="text-[0.7rem]">
-                 Título nível H2
-                </span>
+                <span className="text-[0.7rem]">Título nível H2</span>
               </div>
             </button>
             <button
               className="flex gap-1.5 text-zinc-800 rounded-md hover:bg-zinc-300 p-2 transition-opacity"
-              onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+              onClick={() =>
+                editor.chain().focus().toggleHeading({ level: 3 }).run()
+              }
             >
               <LuHeading3 className="w-9 h-9" />
               <div className="flex flex-col gap-0.5">
                 <p className="text-[0.7rem] uppercase font-bold text-left">
                   Título H3
                 </p>
-                <span className="text-[0.7rem]">
-                 Título nível H3
-                </span>
+                <span className="text-[0.7rem]">Título nível H3</span>
               </div>
             </button>
             <button
@@ -117,67 +106,31 @@ function Editor() {
                 <p className="text-[0.7rem] uppercase font-bold text-left">
                   Lista Simples
                 </p>
-                <span className="text-[0.7rem]">
-                • Exemplo de Lista
-                </span>
+                <span className="text-[0.7rem]">• Exemplo de Lista</span>
               </div>
             </button>
             <button
               className="flex gap-1.5 text-zinc-800 rounded-md hover:bg-zinc-300 p-2 transition-opacity"
-              onClick={() => editor.chain().focus().toggleOrderedList().run()}
+              onClick={() => editor.chain().focus().toggleBulletList().run()}
             >
-              <LuListOrdered className="w-9 h-9" />
+              <LuList className="w-9 h-9" />
               <div className="flex flex-col gap-0.5">
                 <p className="text-[0.7rem] uppercase font-bold text-left">
                   Lista Ordenada
                 </p>
-                <span className="text-[0.7rem]">
-                1.Exemplo Lista 
-                </span>
+                <span className="text-[0.7rem]">1.Lista Ordenada</span>
               </div>
             </button>
           </div>
         </FloatingMenu>
       )}
+
       {editor && (
         <BubbleMenu
-          className="bg-zinc-200 shadow-lg border border-zinc-300 shadow-black/20 rounded-md overflow-hidden flex divide-zinc-300 divide-x-2"
+          className=" p-1 bg-zinc-200 shadow-lg border flex items-center border-zinc-300 shadow-black/20 rounded-md overflow-hidden divide-zinc-300 divide-x-2"
           editor={editor}
         >
-          <BubbleButton>
-            Text
-            <RxChevronDown className="w-4 h-4" />
-          </BubbleButton>
-          <BubbleButton>
-            <RxChatBubble className="w-4 h-4" />
-            Comment
-          </BubbleButton>
-          <div className="flex items-center">
-            <BubbleButton
-              onClick={() => editor.chain().focus().toggleBold().run()}
-              data-active={editor.isActive("bold")}
-            >
-              <RxFontBold className="w-4 h-4" />
-            </BubbleButton>
-            <BubbleButton
-              onClick={() => editor.chain().focus().toggleItalic().run()}
-              data-active={editor.isActive("italic")}
-            >
-              <RxFontItalic className="w-4 h-4" />
-            </BubbleButton>
-            <BubbleButton
-              onClick={() => editor.chain().focus().toggleStrike().run()}
-              data-active={editor.isActive("strike")}
-            >
-              <RxStrikethrough className="w-4 h-4" />
-            </BubbleButton>
-            <BubbleButton
-              onClick={() => editor.chain().focus().toggleCode().run()}
-              data-active={editor.isActive("code")}
-            >
-              <RxCode className="w-4 h-4" />
-            </BubbleButton>
-          </div>
+          <ToolBarMenu />
         </BubbleMenu>
       )}
     </>
