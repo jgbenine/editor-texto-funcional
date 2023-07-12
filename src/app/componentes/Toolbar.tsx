@@ -3,14 +3,14 @@ import * as Toolbar from "@radix-ui/react-toolbar";
 import { useEditor, BubbleMenu, EditorContent, } from "@tiptap/react";
 import { content } from './initialContent'
 
-// import {
-//   RxFontBold,
-//   RxFontItalic,
-//   RxStrikethrough,
-//   RxCode,
-//   RxChatBubble,
-//   RxChevronDown,
-// } from "react-icons/rx";
+import {
+  RxFontBold,
+  RxFontItalic,
+  RxStrikethrough,
+  RxCode,
+  RxChatBubble,
+  RxChevronDown,
+} from "react-icons/rx";
 import {
   FontBoldIcon,
   FontItalicIcon,
@@ -29,30 +29,15 @@ lowlight.registerLanguage("js", js);
 
 // import './styles.css';
 
-function ToolbarMenu() {
-  const toolbarUI = useEditor({
-    extensions: [
-      StarterKit,
-      CodeBlockLowlight.configure({
-        lowlight,
-      }),
-    ],
-    editorProps: {
-      attributes: {
-        class: "outline-none",
-      },
-    },
-    content: content,
-  });
-
+function ToolbarMenu({editor}) {
   return (
-    <>
+    <div>
       <EditorContent
         className="max-w-[700px] mx-auto pt-16 flex flex-col prose"
-        editor={toolbarUI}
+        editor={editor}
       />
-      {toolbarUI && (
-        <BubbleMenu editor={toolbarUI} className="border border-zinc-600">
+      {editor && (
+        <BubbleMenu editor={editor} className="border border-zinc-600">
           <Toolbar.Root
             className="flex p-[10px] w-full min-w-max rounded-md bg-white shadow-[0_2px_10px] shadow-blackA7"
             aria-label="Formatting options"
@@ -62,9 +47,9 @@ function ToolbarMenu() {
                 className="flex-shrink-0 flex-grow-0 basis-auto text-mauve11 h-[25px] px-[5px] rounded inline-flex text-[13px] leading-none items-center justify-center bg-white ml-0.5 outline-none hover:bg-violet3 hover:text-violet11 focus:relative focus:shadow-[0_0_0_2px] focus:shadow-violet7 first:ml-0 data-[state=on]:bg-violet5 data-[state=on]:text-violet11"
                 value="bold"
                 aria-label="Bold"
-                onClick={() => toolbarUI.chain().focus().toggleBold().run()}
+                onClick={() => editor.chain().focus().toggleBold().run()}
               >
-                <FontBoldIcon />
+                <RxFontBold />
               </Toolbar.ToggleItem>
               <Toolbar.ToggleItem
                 className="flex-shrink-0 flex-grow-0 basis-auto text-mauve11 h-[25px] px-[5px] rounded inline-flex text-[13px] leading-none items-center justify-center bg-white ml-0.5 outline-none hover:bg-violet3 hover:text-violet11 focus:relative focus:shadow-[0_0_0_2px] focus:shadow-violet7 first:ml-0 data-[state=on]:bg-violet5 data-[state=on]:text-violet11"
@@ -127,7 +112,7 @@ function ToolbarMenu() {
           </Toolbar.Root>
         </BubbleMenu>
       )}
-    </>
+    </div>
   );
 }
 

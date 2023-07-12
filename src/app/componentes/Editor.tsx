@@ -27,11 +27,7 @@ lowlight.registerLanguage("js", js);
 function Editor() {
   const editor = useEditor({
     extensions: [
-      StarterKit.configure({
-         code:{
-          
-         }
-      }),
+      StarterKit,
       CodeBlockLowlight.configure({
         lowlight,
       }),
@@ -136,9 +132,8 @@ function Editor() {
             className="max-w-[700px] mx-auto pt-16 flex flex-col prose"
             editor={editor}
           />
-          <ToolBarMenu />
-          {/* Resto do código */}
-        </>
+          <ToolBarMenu editor={editor} />
+          </>
       )}
     </>
   );
