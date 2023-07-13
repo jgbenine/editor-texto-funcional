@@ -50,6 +50,7 @@ function Editor() {
           <FloatMenu editor={editor} />
         </div>
       )}
+  
     </>
   );
 }

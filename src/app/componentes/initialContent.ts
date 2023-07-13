@@ -7,7 +7,7 @@ export const content = `
 <h3>Como Usar</h3>
 <ul>
 <li>Selecione um texto para visualizar o <b>Menu Suspenso</b> e editar o conteúdo.</li>
-<li>Selecione uma linha vazia sem conteúdo aperta a tecla "/" para abrir o <b>Menu Flutuante</b> para adicionar um tipo de texto</li>
+<li>Selecione uma linha vazia sem conteúdo aperta a tecla "/" para abrir o <b>Menu Flutuante</b> para adicionar abrir menu.</li>
 
 </ul>
 </div>
