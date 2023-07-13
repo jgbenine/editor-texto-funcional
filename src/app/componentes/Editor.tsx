@@ -16,6 +16,7 @@ import {
 } from "react-icons/lu";
 
 import ToolBarMenu from "./Toolbar";
+import FloatMenu from "./FloatMenu";
 
 lowlight.registerLanguage("js", js);
 
@@ -37,7 +38,7 @@ function Editor() {
 
   return (
     <>
-      <EditorContent
+      {/* <EditorContent
         className="max-w-[700px] mx-auto pt-16 flex flex-col prose"
         editor={editor}
       />
@@ -119,7 +120,7 @@ function Editor() {
             </button>
           </div>
         </FloatingMenu>
-      )}
+      )} */}
 
       {editor && (
         <div>
@@ -127,9 +128,14 @@ function Editor() {
             className="max-w-[700px] mx-auto pt-16 flex flex-col prose"
             editor={editor}
           />
-            <ToolBarMenu editor={editor} />
+          <ToolBarMenu editor={editor} />
+          <div>
+            <FloatMenu editor={editor} />
+          </div>
         </div>
       )}
+
+      <div></div>
     </>
   );
 }
