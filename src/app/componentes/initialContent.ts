@@ -6,10 +6,9 @@ export const content = `
 <div>
 <h3>Como Usar</h3>
 <ul>
-<li>Selecione um texto para visualizar o <b>Menu Suspenso</b> e editar o conteudo.</li>
+<li>Selecione um texto para visualizar o <b>Menu Suspenso</b> e editar o conteúdo.</li>
 <li>Selecione uma linha vazia sem conteúdo aperta a tecla "/" para abrir o <b>Menu Flutuante</b> para adicionar um tipo de texto</li>
-<li>Nesses dois menus você pode navegar com as teclas do seu teclado usando padrão definido 
-<b>ARIA Authoring Practices Guide (APG) Home</b>  utilizado pelos componentes Radix.ui</li>
+
 </ul>
 </div>
 
@@ -17,52 +16,13 @@ export const content = `
 <h3>
   Desenvolvimento
   </h3>
-  <h4>Tecnologias:</h4>
+  <h4>Algumas Tecnologias:</h4>
   <ul>
-    <li>React(NextJS)</li>
-    <li>Tailwindcss</li>
-    <li>Typescript</li>
-    <li>TipTap</li>
-    <li>Radix.Ui</li>
+    <li><a href="https://nextjs.org/" target="_blank">Nextjs</a></li>
+    <li><a href="https://tailwindcss.com/" target="_blank">Tailwindcss </a></li>
+    <li><a href="https://tiptap.dev/" target="_blank">TipTap</a></li>
+    <li><a href="https://www.radix-ui.com/" target="_blank">Radix.ui</a></li>
 </ul>
 </div>
-
 <hr>
-<div>
-<h3>Exemplos de conteúdo</h3>
-
-<h2>Citações</h2>
-<blockquote>
-<p>Esta é uma citação.</p>
-</blockquote>
-
-<pre>
-  <code class="language-js">
-  function myFunction(p1, p2) {
-      return p1 * p2;
-    }
-  </code> 
-</pre>
-
-<abbr title="World Wide Web">WWW</abbr>
-
-<mark>Texto destacado</mark>
-
-<del>Texto deletado</del>
-
-<ins>Texto inserido</ins>
-
-<sup>Texto sobrescrito</sup>
-
-<sub>Texto subscrito</sub>
-
-<small>Texto em tamanho reduzido</small>
-
-<big>Texto em tamanho ampliado</big>
-
-<span>Span - um contêiner genérico para estilo de texto</span>
-
-<a href="https://www.example.com">Link para outro site</a>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquam dolor vel est faucibus congue.</p>
 </div>`

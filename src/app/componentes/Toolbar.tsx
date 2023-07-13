@@ -50,7 +50,7 @@ function ToolbarMenu({ editor }: toggleMenuProps) {
   return (
     <>
       <EditorContent
-        className="max-w-[700px] mx-auto pt-16 flex flex-col prose"
+        className="max-w-[700px] mx-auto pt-16 flex flex-col"
         editor={editor}
       />
       {editor && (
