@@ -10,8 +10,8 @@ import TextAlign from "@tiptap/extension-text-align";
 import ToolBarMenu from "./Toolbar";
 import FloatMenu from "./FloatMenu";
 import Link from "@tiptap/extension-link";
+import CommandMenu from "./CommandMenu";
 
-//Theme/Language CodeBlock
 import 'highlight.js/styles/stackoverflow-dark.css'
 lowlight.registerLanguage("js", js);
 
@@ -50,7 +50,6 @@ function Editor() {
           <FloatMenu editor={editor} />
         </div>
       )}
-  
     </>
   );
 }
