@@ -21,25 +21,25 @@ function CommandMenu() {
           </Command.Empty>
           <Command.Group heading="Ações:" className="border-zinc-500 text-sm pt-4">
             <Command.Item className="flex gap-3 items-center text-sm mt-3">
-              <span className="bg-slate-400 p-1 rounded-2xl">
+              <span className="bg-slate-300 p-1 rounded-2xl">
                 <ListBulletIcon className="w-5 h-5" />
               </span>
               <p>Lista com marcadores</p>
             </Command.Item>
             <Command.Item className="flex gap-3 items-center text-sm mt-3">
-              <span className="bg-slate-400 p-1 rounded-2xl">
+              <span className="bg-slate-300 p-1 rounded-2xl">
                 <HeadingIcon className="w-5 h-5" />
               </span>
               <p>Títulos e subtítulos</p>
             </Command.Item>
             <Command.Item className="flex gap-3 items-center text-sm mt-3">
-              <span className="bg-slate-400 p-1 rounded-2xl">
+              <span className="bg-slate-300 p-1 rounded-2xl">
                 <TextAlignCenterIcon className="w-5 h-5" />
               </span>
               <p>Centralizar</p>
             </Command.Item>
             <Command.Item className="flex gap-3 items-center text-sm mt-3">
-              <span className="bg-slate-400 p-1 rounded-2xl">
+              <span className="bg-slate-300 p-1 rounded-2xl">
                 <TextAlignLeftIcon className="w-5 h-5" />
               </span>
               <p>Alinhar a esquerda</p>
@@ -47,7 +47,6 @@ function CommandMenu() {
             <Command.Separator />
             <Command.Item>Item C</Command.Item>
           </Command.Group>
-
           <Command.Item>Apple</Command.Item>
         </Command.List>
       </Command>

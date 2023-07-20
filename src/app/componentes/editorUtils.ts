@@ -29,3 +29,18 @@ export function handleBold(editor: Editor) {
 export function handleCodeBlock(editor: Editor) {
     editor.chain().focus().toggleCodeBlock().run()
 }
+
+export function handleTitle(editor: Editor) {
+  editor.chain().focus().toggleHeading({ level: 1 }).run();
+}
+
+export function handleBulletList(editor: Editor) {
+  editor.chain().focus().toggleBulletList().run();
+}
+
+export function handleTextCenter(editor: Editor) {
+  editor.chain().focus().setTextAlign("center").run();
+}
+export function handleTextLeft(editor: Editor) {
+  editor.chain().focus().setTextAlign("left").run();
+}

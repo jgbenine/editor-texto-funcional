@@ -3,6 +3,14 @@ import * as Toolbar from "@radix-ui/react-toolbar";
 import * as Separator from "@radix-ui/react-separator";
 import { BubbleMenu, Editor, EditorContent } from "@tiptap/react";
 import {
+  handleBlockquote,
+  handleCodeBlock,
+  handleBold,
+  handleItalic,
+  handleLink,
+  handleStrike,
+} from "../componentes/editorUtils";
+import {
   RxFontBold,
   RxFontItalic,
   RxStrikethrough,
@@ -10,9 +18,6 @@ import {
   RxQuote,
   RxCode,
 } from "react-icons/rx";
-
-import {handleBlockquote, handleCodeBlock, handleBold, handleItalic, handleLink, handleStrike} from '../componentes/EditorUtils'
-
 
 interface toggleMenuProps {
   editor: Editor;
@@ -71,7 +76,7 @@ function ToolbarMenu({ editor }: toggleMenuProps) {
               <Toolbar.ToggleItem
                 value="code"
                 aria-label="code"
-                onClick={()=>handleCodeBlock(editor)}
+                onClick={() => handleCodeBlock(editor)}
                 className="h-[100%] border border-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
               >
                 <RxCode className="w-5 h-5" />
