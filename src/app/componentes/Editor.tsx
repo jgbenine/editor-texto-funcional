@@ -10,7 +10,6 @@ import TextAlign from "@tiptap/extension-text-align";
 import ToolBarMenu from "./Toolbar";
 import FloatMenu from "./FloatMenu";
 import Link from "@tiptap/extension-link";
-import CommandMenu from "./CommandMenu";
 
 import 'highlight.js/styles/stackoverflow-dark.css'
 lowlight.registerLanguage("js", js);

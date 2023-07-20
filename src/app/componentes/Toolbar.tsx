@@ -11,42 +11,14 @@ import {
   RxCode,
 } from "react-icons/rx";
 
+import {handleBlockquote, handleCodeBlock, handleBold, handleItalic, handleLink, handleStrike} from '../componentes/EditorUtils'
+
+
 interface toggleMenuProps {
   editor: Editor;
 }
 
 function ToolbarMenu({ editor }: toggleMenuProps) {
-  function handleLink() {
-    const previousUrl = editor.getAttributes("link").href;
-    const url = window.prompt("URL", previousUrl);
-
-    if (url !== null) {
-      editor
-        .chain()
-        .focus()
-        .extendMarkRange("link")
-        .setLink({ href: url })
-        .run();
-    }
-  }
-
-  function handleBlockquote() {
-    editor.chain().focus().toggleBlockquote().run();
-  }
-  function handleStrike() {
-    editor.chain().focus().toggleStrike().run();
-  }
-  function handleItalic() {
-    editor.chain().focus().toggleItalic().run();
-  }
-  function handleBold() {
-    editor.chain().focus().toggleBold().run()
-  }
-  function handleCodeBlock() {
-      editor.chain().focus().toggleCodeBlock().run()
-  }
-
-
   return (
     <>
       <EditorContent
@@ -68,7 +40,7 @@ function ToolbarMenu({ editor }: toggleMenuProps) {
                 className="h-[100%] border bortder-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
                 value="bold"
                 aria-label="Bold"
-                onClick={handleBold}
+                onClick={() => handleBold(editor)}
               >
                 <RxFontBold className="w-5 h-5" />
               </Toolbar.ToggleItem>
@@ -76,14 +48,14 @@ function ToolbarMenu({ editor }: toggleMenuProps) {
                 className="h-[100%] border border-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
                 value="italic"
                 aria-label="Italic"
-                onClick={handleItalic}
+                onClick={() => handleItalic(editor)}
               >
                 <RxFontItalic className="w-5 h-5" />
               </Toolbar.ToggleItem>
               <Toolbar.ToggleItem
                 value="strike"
                 aria-label="strike"
-                onClick={handleStrike}
+                onClick={() => handleStrike(editor)}
                 className="h-[100%] border border-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
               >
                 <RxStrikethrough className="w-5 h-5" />
@@ -91,7 +63,7 @@ function ToolbarMenu({ editor }: toggleMenuProps) {
               <Toolbar.ToggleItem
                 value="Link"
                 aria-label="link"
-                onClick={handleLink}
+                onClick={() => handleLink(editor)}
                 className="h-[100%] border border-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
               >
                 <RxLink1 className="w-5 h-5" />
@@ -99,7 +71,7 @@ function ToolbarMenu({ editor }: toggleMenuProps) {
               <Toolbar.ToggleItem
                 value="code"
                 aria-label="code"
-                onClick={handleCodeBlock}
+                onClick={()=>handleCodeBlock(editor)}
                 className="h-[100%] border border-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
               >
                 <RxCode className="w-5 h-5" />
@@ -112,7 +84,7 @@ function ToolbarMenu({ editor }: toggleMenuProps) {
               <Toolbar.ToggleItem
                 value="quote"
                 aria-label="quote"
-                onClick={handleBlockquote}
+                onClick={() => handleBlockquote(editor)}
                 className="h-[100%] flex gap-1.5 items-center p-1 px-2 rounded-lg hover:bg-zinc-200"
               >
                 <RxQuote className="w-4 h-4" />
