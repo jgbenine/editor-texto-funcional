@@ -3,15 +3,9 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { EditorContent, Editor, FloatingMenu } from "@tiptap/react";
 import {
   ListBulletIcon,
-  HeadingIcon,
-  TextAlignCenterIcon,
-  TextAlignLeftIcon,
 } from "@radix-ui/react-icons";
 import {
   handleBulletList,
-  handleTextCenter,
-  handleTextLeft,
-  handleTitle,
 } from "../componentes/editorUtils";
 
 interface floatMenuProps {
@@ -54,105 +48,10 @@ function FloatMenu({ editor }: floatMenuProps) {
                   </div>
                 </NavigationMenu.Trigger>
               </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Trigger
-                  onClick={() => handleTextCenter(editor)}
-                  className="flex w-[100%] gap-4 text-zinc-800  hover:bg-zinc-200 p-2 transition-opacity "
-                >
-                  <TextAlignCenterIcon className="w-6 h-6" />
-                  <div className="flex flex-col gap-0.5">
-                    <p className="text-[0.8rem] uppercase font-bold text-left">
-                      Text Center
-                    </p>
-                    <span className="text-[0.7rem]">Centralizar Conteúdo</span>
-                  </div>
-                </NavigationMenu.Trigger>
-              </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Trigger
-                  onClick={() => handleTextLeft(editor)}
-                  className="flex w-[100%] gap-4 text-zinc-800 hover:bg-zinc-200 p-2 transition-opacity "
-                >
-                  <TextAlignLeftIcon className="w-6 h-6" />
-                  <div className="flex flex-col gap-0.5">
-                    <p className="text-[0.8rem] uppercase font-bold text-left">
-                      Text Left
-                    </p>
-                    <span className="text-[0.7rem]">Text Left</span>
-                  </div>
-                </NavigationMenu.Trigger>
-              </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Trigger
-                  onClick={() => handleTitle(editor)}
-                  className="flex w-[100%] gap-4 text-zinc-800 hover:bg-zinc-200 p-2 transition-opacity "
-                >
-                  <HeadingIcon className="w-6 h-6" />
-                  <div className="flex flex-col gap-0.5">
-                    <p className="text-[0.8rem] uppercase font-bold text-left">
-                      Titulo H¹
-                    </p>
-                    <span className="text-[0.7rem]">Title Heading</span>
-                  </div>
-                </NavigationMenu.Trigger>
-              </NavigationMenu.Item>
             </NavigationMenu.List>
           </NavigationMenu.Root>
         </FloatingMenu>
       )}
-
-      {/* {editor && (
-        <FloatingMenu
-          editor={editor}
-          shouldShow={({ state }) => {
-            const { $from } = state.selection;
-            const currentLineText = $from.nodeBefore?.textContent;
-            return currentLineText === "/";
-          }}
-        >
-          <Menubar.Root aria-orientation="vertical"  className="flex w-[250px] flex-col p-[3px] bg-zinc-100 border shadow-[0_1px_5px] shadow-zinc-400">
-            <Menubar.Menu>
-              <Menubar.Trigger
-                onClick={handleTitle}
-                className="flex w-[100%] gap-4 text-zinc-800 w-100 hover:border-none p-2 transition-opacity"
-              >
-                <HeadingIcon className="w-9 h-9" />
-                <div className="flex flex-col gap-0.5">
-                  <p className="text-[0.7rem] uppercase font-bold text-left">
-                    Títulos
-                  </p>
-                  <span className="text-[0.7rem]">Titulos Hs</span>
-                </div>
-              </Menubar.Trigger>
-              <Menubar.Trigger
-                onClick={handleBulletList}
-                className="flex w-[100%] gap-4 text-zinc-800 w-100 hover:border-none p-2 transition-opacity"
-              >
-                <ListBulletIcon className="w-9 h-9" />
-                <div className="flex flex-col gap-0.5">
-                  <p className="text-[0.7rem] uppercase font-bold text-left">
-                    Listas
-                  </p>
-                  <span className="text-[0.7rem]">Listas</span>
-                </div>
-              </Menubar.Trigger>
-              <Menubar.Trigger
-                onClick={handleTextCenter}
-                className="flex w-[100%] gap-4 text-zinc-800 w-100 hover:border-none p-2 transition-opacity"
-              >
-                <TextAlignCenterIcon className="w-9 h-9" />
-                <div className="flex flex-col gap-0.5">
-                  <p className="text-[0.7rem] uppercase font-bold text-left">
-                    Text Center
-                  </p>
-                  <span className="text-[0.7rem]">Alinhamento de texto</span>
-                </div>
-              </Menubar.Trigger>
-            </Menubar.Menu>
-          </Menubar.Root>
-        </FloatingMenu>
-        
-      )} */}
     </>
   );
 }

@@ -13,7 +13,7 @@ import {
   RulerHorizontalIcon,
   CodeIcon,
   Link2Icon,
-  Pencil2Icon
+  Pencil2Icon,
 } from "@radix-ui/react-icons";
 
 import {
@@ -44,10 +44,7 @@ function Sidebar() {
             <Command.Empty className="text-zinc-400 text-sm py-1">
               Resultados não encontrados.
             </Command.Empty>
-            <Command.Group
-              heading=""
-              className="border-zinc-500 text-sm pt-4"
-            >
+            <Command.Group heading="" className="border-zinc-500 text-sm pt-4">
               <ButtonSidebar
                 onClick={() => {
                   if (!editorInstance) return;
@@ -88,6 +85,7 @@ function Sidebar() {
                 icon={<Link2Icon className="w-5 h-5" />}
                 label="Adicionar Links"
               />
+              <Command.Separator about="Textos" />
               <ButtonSidebar
                 onClick={() => {
                   if (!editorInstance) return;
