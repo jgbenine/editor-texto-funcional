@@ -25,6 +25,7 @@ export function handleItalic(editor: Editor) {
 }
 export function handleBold(editor: Editor) {
   editor.chain().focus().toggleBold().run()
+  console.log('bold')
 }
 export function handleCodeBlock(editor: Editor) {
     editor.chain().focus().toggleCodeBlock().run()
@@ -36,6 +37,7 @@ export function handleTitle(editor: Editor) {
 
 export function handleBulletList(editor: Editor) {
   editor.chain().focus().toggleBulletList().run();
+  console.log('list')
 }
 
 export function handleTextCenter(editor: Editor) {
