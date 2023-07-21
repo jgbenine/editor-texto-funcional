@@ -49,7 +49,7 @@ export function handleTextLeft(editor: Editor) {
 }
 
 export function handleTextRight(editor: Editor){
-  editor.chain().focus().setTextAlign("left").run();
+  editor.chain().focus().setTextAlign("right").run();
 }
 
 export function handleCheckbox(editor: Editor){

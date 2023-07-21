@@ -1,28 +1,25 @@
 export const content = `
 <h1>Editor de Texto</h1>
-<h2>Introdução</h2>
-<p>lorem.</p>
 
 <div>
-<h3>Como Usar</h3>
 <ul>
-<li>Selecione um texto para visualizar o <b>Menu Suspenso</b> e editar o conteúdo.</li>
-<li>Selecione uma linha vazia sem conteúdo aperta a tecla "/" para abrir o <b>Menu Flutuante</b> para adicionar abrir menu.</li>
-
+<li>Selecione um texto para visualizar o <b>Menu Suspenso</b>.</li>
+<li>Linha vazia sem conteúdo tecla "/" para abrir o <b>Menu Flutuante</b>.</li>
 </ul>
 </div>
 
+<h2>Introdução</h2>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'<a href="https://tailwindcss.com/" target="_blank">lorem </a></li> standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 <div>
-<h3>
-  Desenvolvimento
-  </h3>
-  <h4>Algumas Tecnologias:</h4>
-  <ul>
-    <li><a href="https://nextjs.org/" target="_blank">Nextjs</a></li>
-    <li><a href="https://tailwindcss.com/" target="_blank">Tailwindcss </a></li>
-    <li><a href="https://tiptap.dev/" target="_blank">TipTap</a></li>
-    <li><a href="https://www.radix-ui.com/" target="_blank">Radix.ui</a></li>
-</ul>
+  <h3>Introdução 1.2</h3>
+  <p>Lo0s, when an unknown pd in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 </div>
+
+<ul>
+  <li>Tis simply dummy text of the printing a</li>
+  <li>dummy text ever since the 1500s, when an unknown printer took a galley of typ</li>
+</ul>
 <hr>
+
+
 </div>`

@@ -9,6 +9,7 @@
     <li><a href="https://tailwindcss.com/" target="_blank">Tailwindcss </a></li>
     <li><a href="https://tiptap.dev/" target="_blank">TipTap</a></li>
     <li><a href="https://www.radix-ui.com/" target="_blank">Radix.ui</a></li>
+    <li><a href="https://cmdk.paco.me/" target="_blank">⌘K</a></li>
 </ul>
 
 ## Iniciar Projeto

@@ -12,7 +12,7 @@ function EditorWrapper() {
       {editorInstance && (
         <div>
           <EditorContent
-            className="max-w-[700px] mx-auto pt-16 flex flex-col prose"
+            className="max-w-[999px] mx-auto pt-[4.5rem] flex flex-col prose"
             editor={editorInstance}
           />
           <ToolBarMenu editor={editorInstance} />

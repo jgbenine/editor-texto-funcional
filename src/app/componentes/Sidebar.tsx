@@ -25,7 +25,8 @@ import {
   addHorizontalRule,
   handleCodeBlock,
   handleLink,
-  handleHighlight
+  handleTextRight,
+  handleHighlight,
 } from "../componentes/editorUtils";
 
 function Sidebar() {
@@ -114,7 +115,7 @@ function Sidebar() {
               <ButtonSidebar
                 onClick={() => {
                   if (!editorInstance) return;
-                  handleTextLeft(editorInstance);
+                  handleTextRight(editorInstance);
                 }}
                 icon={<TextAlignRightIcon className="w-5 h-5" />}
                 label="Texto à direita"
