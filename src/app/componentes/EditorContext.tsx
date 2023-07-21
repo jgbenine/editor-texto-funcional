@@ -3,12 +3,15 @@ import { Editor, EditorOptions } from "@tiptap/react";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import js from "highlight.js/lib/languages/javascript";
 import StarterKit from "@tiptap/starter-kit";
-import { content } from "./initialContent";
 import TextAlign from "@tiptap/extension-text-align";
 import Link from "@tiptap/extension-link";
+import Highlight from '@tiptap/extension-highlight'
 import { lowlight } from "lowlight/lib/core";
+import { content } from "./initialContent";
 
 import "highlight.js/styles/stackoverflow-dark.css";
+import TaskList from "@tiptap/extension-task-list";
+import TaskItem from "@tiptap/extension-task-item";
 lowlight.registerLanguage("js", js);
 
 interface EditorContextProps {
@@ -26,6 +29,16 @@ export function EditorProvider({ children }: { children: ReactNode }) {
       const editorOptions: Partial<EditorOptions> = {
         extensions: [
           StarterKit,
+          TaskList,
+          TaskItem.configure({
+            nested: true,
+            HTMLAttributes: {
+              class: 'checkBox',
+            },
+          }),
+          Highlight.configure({
+            multicolor: true,
+          }),
           TextAlign.configure({
             types: ["heading", "paragraph"],
           }),

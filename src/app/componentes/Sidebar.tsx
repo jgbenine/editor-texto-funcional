@@ -1,11 +1,19 @@
 import React from "react";
 import { Command } from "cmdk";
 import { EditorProvider, useEditorContext } from "./EditorContext";
+import ButtonSidebar from "./ButtonSidebar";
+
 import {
   ListBulletIcon,
   HeadingIcon,
   TextAlignCenterIcon,
   TextAlignLeftIcon,
+  CheckboxIcon,
+  TextAlignRightIcon,
+  RulerHorizontalIcon,
+  CodeIcon,
+  Link2Icon,
+  Pencil2Icon
 } from "@radix-ui/react-icons";
 
 import {
@@ -13,10 +21,12 @@ import {
   handleTextCenter,
   handleTextLeft,
   handleTitle,
+  handleCheckbox,
+  addHorizontalRule,
+  handleCodeBlock,
+  handleLink,
+  handleHighlight
 } from "../componentes/editorUtils";
-
-import ButtonSidebar from "./ButtonSidebar";
-
 
 function Sidebar() {
   const { editorInstance } = useEditorContext();
@@ -34,35 +44,83 @@ function Sidebar() {
               Resultados não encontrados.
             </Command.Empty>
             <Command.Group
-              heading="Ações:"
+              heading=""
               className="border-zinc-500 text-sm pt-4"
             >
-              <ButtonSidebar 
-                onClick={()=> {
+              <ButtonSidebar
+                onClick={() => {
+                  if (!editorInstance) return;
+                  handleCheckbox(editorInstance);
+                }}
+                icon={<CheckboxIcon className="w-5 h-5" />}
+                label="Caixa de seleção"
+              />
+              <ButtonSidebar
+                onClick={() => {
+                  if (!editorInstance) return;
+                  addHorizontalRule(editorInstance);
+                }}
+                icon={<RulerHorizontalIcon className="w-5 h-5" />}
+                label="Linha horizontal"
+              />
+              <ButtonSidebar
+                onClick={() => {
+                  if (!editorInstance) return;
+                  handleHighlight(editorInstance);
+                }}
+                icon={<Pencil2Icon className="w-5 h-5" />}
+                label="Destaque"
+              />
+              <ButtonSidebar
+                onClick={() => {
+                  if (!editorInstance) return;
+                  handleCodeBlock(editorInstance);
+                }}
+                icon={<CodeIcon className="w-5 h-5" />}
+                label="Códigos"
+              />
+              <ButtonSidebar
+                onClick={() => {
+                  if (!editorInstance) return;
+                  handleLink(editorInstance);
+                }}
+                icon={<Link2Icon className="w-5 h-5" />}
+                label="Adicionar Links"
+              />
+              <ButtonSidebar
+                onClick={() => {
                   if (!editorInstance) return;
                   handleTitle(editorInstance);
                 }}
                 icon={<HeadingIcon className="w-5 h-5" />}
                 label="Títulos H1"
               />
-              <ButtonSidebar 
-                onClick={()=> {
+              <ButtonSidebar
+                onClick={() => {
                   if (!editorInstance) return;
                   handleBulletList(editorInstance);
                 }}
                 icon={<ListBulletIcon className="w-5 h-5" />}
                 label="Lista"
               />
-              <ButtonSidebar 
-                onClick={()=> {
+              <ButtonSidebar
+                onClick={() => {
                   if (!editorInstance) return;
                   handleTextCenter(editorInstance);
                 }}
                 icon={<TextAlignCenterIcon className="w-5 h-5" />}
                 label="Texto Centralizado"
               />
-              <ButtonSidebar 
-                onClick={()=> {
+              <ButtonSidebar
+                onClick={() => {
+                  if (!editorInstance) return;
+                  handleTextLeft(editorInstance);
+                }}
+                icon={<TextAlignRightIcon className="w-5 h-5" />}
+                label="Texto à direita"
+              />
+              <ButtonSidebar
+                onClick={() => {
                   if (!editorInstance) return;
                   handleTextLeft(editorInstance);
                 }}

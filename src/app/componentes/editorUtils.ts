@@ -24,11 +24,10 @@ export function handleItalic(editor: Editor) {
   editor.chain().focus().toggleItalic().run();
 }
 export function handleBold(editor: Editor) {
-  editor.chain().focus().toggleBold().run()
-  console.log('bold')
+  editor.chain().focus().toggleBold().run();
 }
 export function handleCodeBlock(editor: Editor) {
-    editor.chain().focus().toggleCodeBlock().run()
+    editor.chain().focus().toggleCodeBlock().run();
 }
 
 export function handleTitle(editor: Editor) {
@@ -37,7 +36,9 @@ export function handleTitle(editor: Editor) {
 
 export function handleBulletList(editor: Editor) {
   editor.chain().focus().toggleBulletList().run();
-  console.log('list')
+}
+export function handleOrderedList(editor: Editor) {
+  editor.chain().focus().toggleOrderedList().run()
 }
 
 export function handleTextCenter(editor: Editor) {
@@ -45,4 +46,20 @@ export function handleTextCenter(editor: Editor) {
 }
 export function handleTextLeft(editor: Editor) {
   editor.chain().focus().setTextAlign("left").run();
+}
+
+export function handleTextRight(editor: Editor){
+  editor.chain().focus().setTextAlign("left").run();
+}
+
+export function handleCheckbox(editor: Editor){
+  editor.chain().focus().toggleTaskList().run();
+}
+
+export function addHorizontalRule(editor: Editor){
+ editor.chain().focus().setHorizontalRule().run();
+}
+
+export function handleHighlight(editor: Editor){
+  editor.chain().focus().toggleHighlight().run();
 }

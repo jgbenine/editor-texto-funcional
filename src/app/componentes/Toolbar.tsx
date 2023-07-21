@@ -9,6 +9,7 @@ import {
   handleItalic,
   handleLink,
   handleStrike,
+  handleHighlight,
 } from "../componentes/editorUtils";
 import {
   RxFontBold,
@@ -17,6 +18,7 @@ import {
   RxLink1,
   RxQuote,
   RxCode,
+  RxPencil2
 } from "react-icons/rx";
 
 interface toggleMenuProps {
@@ -72,6 +74,14 @@ function ToolbarMenu({ editor }: toggleMenuProps) {
                 className="h-[100%] border border-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
               >
                 <RxLink1 className="w-5 h-5" />
+              </Toolbar.ToggleItem>
+              <Toolbar.ToggleItem
+                value="highlight"
+                aria-label="highlight"
+                onClick={() => handleHighlight(editor)}
+                className="h-[100%] border border-zinc-200 p-0.5 rounded-sm hover:bg-zinc-200"
+              >
+                <RxPencil2 className="w-5 h-5" />
               </Toolbar.ToggleItem>
               <Toolbar.ToggleItem
                 value="code"

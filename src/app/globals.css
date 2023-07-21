@@ -21,3 +21,20 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.checkBox{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 20px;  
+}
+
+.checkBox > label input[type="checkbox"] {
+  cursor: pointer;
+}
+
+mark{
+  background: #ffc078;
+}
+
+
