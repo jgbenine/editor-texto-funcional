@@ -15,76 +15,66 @@ import {
   handleTitle,
 } from "../componentes/editorUtils";
 
+import ButtonSidebar from "./ButtonSidebar";
+
 
 function Sidebar() {
   const { editorInstance } = useEditorContext();
-  
-  return (
-    <EditorProvider>
-      <Command label="Command Menu">
-        <Command.Input
-          className="bg-transparent border border-slate-500 rounded-md py-1 px-2 text-sm"
-          placeholder="Pesquisar"
-        />
-        <Command.List>
-          <Command.Empty className="text-zinc-400 text-sm py-1">
-            Resultados não encontrados.
-          </Command.Empty>
-          <Command.Group
-            heading="Ações:"
-            className="border-zinc-500 text-sm pt-4"
-          >
-            <Command.Item className="text-sm mt-3 cursor-pointer">
-              <button
-                className="flex gap-3 items-center"
-                onClick={() => {if (!editorInstance) return;handleBulletList(editorInstance);}}
-              >
-                <span className="bg-slate-300 p-1 rounded-2xl">
-                  <ListBulletIcon className="w-5 h-5" />
-                </span>
-                Lista com marcadores
-              </button>
-            </Command.Item>
-            <Command.Item className="text-sm mt-3 cursor-pointer">
-              <button
-                className="flex gap-3 items-center"
-                onClick={() => {if (!editorInstance) return;handleTitle(editorInstance);}}
-              >
-                <span className="bg-slate-300 p-1 rounded-2xl">
-                  <HeadingIcon className="w-5 h-5" />
-                </span>
-                Títulos e subtítulos
-              </button>
-            </Command.Item>
-            <Command.Item className="text-sm mt-3 cursor-pointer">
-              <button
-                className="flex gap-3 items-center"
-                onClick={() => { if (!editorInstance) return; handleTextCenter(editorInstance);}}
-              >
-                <span className="bg-slate-300 p-1 rounded-2xl">
-                  <TextAlignCenterIcon className="w-5 h-5" />
-                </span>
-                Centralizar
-              </button>
-            </Command.Item>
 
-            <Command.Item className="text-sm mt-3 cursor-pointer">
-              <button
-                className="flex gap-3 items-center"
-                onClick={() => {if (!editorInstance) return; handleTextLeft(editorInstance);}}
-              >
-                <span className="bg-slate-300 p-1 rounded-2xl">
-                  <TextAlignLeftIcon className="w-5 h-5" />
-                </span>
-                Alinhar a esquerda
-              </button>
-            </Command.Item>
-          </Command.Group>
-        </Command.List>
-      </Command>
-    </EditorProvider>
+  return (
+    <aside className="w-[220px]">
+      <EditorProvider>
+        <Command label="Command Menu">
+          <Command.Input
+            className="bg-transparent border border-slate-500 rounded-md py-1 px-2 text-sm w-full"
+            placeholder="Pesquisar"
+          />
+          <Command.List>
+            <Command.Empty className="text-zinc-400 text-sm py-1">
+              Resultados não encontrados.
+            </Command.Empty>
+            <Command.Group
+              heading="Ações:"
+              className="border-zinc-500 text-sm pt-4"
+            >
+              <ButtonSidebar 
+                onClick={()=> {
+                  if (!editorInstance) return;
+                  handleTitle(editorInstance);
+                }}
+                icon={<HeadingIcon className="w-5 h-5" />}
+                label="Títulos H1"
+              />
+              <ButtonSidebar 
+                onClick={()=> {
+                  if (!editorInstance) return;
+                  handleBulletList(editorInstance);
+                }}
+                icon={<ListBulletIcon className="w-5 h-5" />}
+                label="Lista"
+              />
+              <ButtonSidebar 
+                onClick={()=> {
+                  if (!editorInstance) return;
+                  handleTextCenter(editorInstance);
+                }}
+                icon={<TextAlignCenterIcon className="w-5 h-5" />}
+                label="Texto Centralizado"
+              />
+              <ButtonSidebar 
+                onClick={()=> {
+                  if (!editorInstance) return;
+                  handleTextLeft(editorInstance);
+                }}
+                icon={<TextAlignLeftIcon className="w-5 h-5" />}
+                label="Texto à esquerda"
+              />
+            </Command.Group>
+          </Command.List>
+        </Command>
+      </EditorProvider>
+    </aside>
   );
 }
-
 
 export default Sidebar;

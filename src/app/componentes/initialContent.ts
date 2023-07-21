@@ -1,7 +1,7 @@
 export const content = `
 <h1>Editor de Texto</h1>
 <h2>Introdução</h2>
-<p>Um bom editor de texto funcional geralmente oferece recursos como formatação de texto (negrito, itálico, sublinhado), estilos de fonte, tamanhos de fonte, listas numeradas e com marcadores, alinhamento de texto, recuo de parágrafo, inserção de links, suporte a imagens e muito mais.</p>
+<p>lorem.</p>
 
 <div>
 <h3>Como Usar</h3>
