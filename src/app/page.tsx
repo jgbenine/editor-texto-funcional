@@ -9,10 +9,12 @@ export default function Home() {
       <div className="bg-white border-xl mx-auto rounded-lg border-black/20 overflow-hidden grid grid-cols-[1fr]">
         <EditorProvider>
           <main className="flex gap-16 min-h-[805px]">
-            <div className="flex border-slate-50 bg-zinc-50 p-4">
+            <aside className="flex border-slate-50 bg-zinc-50 p-4 w-[250px]">
               <Sidebar />
+            </aside>
+            <div>
+              <EditorWrapper />
             </div>
-            <EditorWrapper />
           </main>
         </EditorProvider>
       </div>

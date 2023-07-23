@@ -45,9 +45,6 @@ export function EditorProvider({ children }: { children: ReactNode }) {
           Link.configure({
             protocols: ["ftp", "mailto"],
           }),
-          CodeBlockLowlight.configure({
-            lowlight,
-          }),
         ],
         editorProps: {
           attributes: {

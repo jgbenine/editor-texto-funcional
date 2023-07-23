@@ -37,4 +37,35 @@ mark{
   background: #ffc078;
 }
 
+.anima-opacity{
+  animation: opacity .2s ease forwards;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vh;
+  height: 100%;
+}
+
+.loadingSpinner {
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #ffc078;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes opacity{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
 

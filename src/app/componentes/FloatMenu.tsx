@@ -9,7 +9,7 @@ import {
 } from "../componentes/editorUtils";
 
 interface floatMenuProps {
-  editor: Editor;
+  editor: Editor | null;
 }
 
 function FloatMenu({ editor }: floatMenuProps) {

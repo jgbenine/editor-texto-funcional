@@ -22,7 +22,7 @@ import {
 } from "react-icons/rx";
 
 interface toggleMenuProps {
-  editor: Editor;
+  editor: Editor | null;
 }
 
 function ToolbarMenu({ editor }: toggleMenuProps) {

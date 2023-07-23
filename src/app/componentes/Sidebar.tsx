@@ -33,9 +33,8 @@ function Sidebar() {
   const { editorInstance } = useEditorContext();
 
   return (
-    <aside className="w-[220px]">
       <EditorProvider>
-        <Command label="Command Menu">
+        <Command label="sidebar" >
           <Command.Input
             className="bg-transparent border border-slate-500 rounded-md py-1 px-2 text-sm w-full"
             placeholder="Pesquisar"
@@ -130,7 +129,6 @@ function Sidebar() {
           </Command.List>
         </Command>
       </EditorProvider>
-    </aside>
   );
 }
 
